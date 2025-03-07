@@ -1,6 +1,2 @@
-Data/e-mongolia/agency.xlsx
-Data/e-mongolia/citizen.xlsx
-Data/e-mongolia/emon.service.xlsx
-Data/e-mongolia/request_log.xlsx
-Data/e-mongolia/request.xlsx
-Data/e-mongolia/service.xlsx
+Data/e-mongolia/*.xlsx
+Data/e-mongolia/*.ipynb
