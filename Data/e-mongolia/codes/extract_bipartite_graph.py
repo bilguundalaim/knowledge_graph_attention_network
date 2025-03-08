@@ -2,7 +2,7 @@ import pandas as pd
 
 # Reading all sheets from the excel file
 print("Reading all sheets from the excel file...")
-all_sheets = pd.read_excel("./request.xlsx", sheet_name=None)
+all_sheets = pd.read_excel("../excel-files/request.xlsx", sheet_name=None)
 
 # Concatenating all sheets
 print("Concatenating all sheets...")
@@ -19,4 +19,4 @@ train_data = df.groupby("userid")["service_id"].apply(lambda x: " ".join(map(str
 
 # Saving the data
 print("Saving the data...")
-train_data.to_csv("train.txt", sep=" ", index=False, header=False)
+train_data.to_csv("../train.txt", sep=" ", index=False, header=False)

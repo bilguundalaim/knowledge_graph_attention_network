@@ -2,7 +2,7 @@ import pandas as pd
 
 # Reading data from excel file
 print("Reading data from excel file...")
-df_service = pd.read_excel('./emon.service.xlsx')
+df_service = pd.read_excel('../excel-files/emon.service.xlsx')
 
 # Creating a list to store the triples
 kg_triples = []
@@ -19,6 +19,6 @@ for index, row in df_service.iterrows():
 
 # Writing the triples to a file
 print("Writing the triples to a file...")
-with open('kg_final.txt', 'w') as f:
+with open('../kg_final.txt', 'w') as f:
   for triple in kg_triples:
     f.write(triple + "\n")
