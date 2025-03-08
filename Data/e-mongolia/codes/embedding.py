@@ -13,7 +13,7 @@ relation_map = pd.read_csv("../relation_list.txt", sep=" ", header=None, names=[
 relation_dict = dict(zip(relation_map["org_id"], relation_map["remap_id"]))
 
 input_train = "../train_raw.txt"
-output_train = "../train.txt"
+output_train = "../train_embedded.txt"
 
 with open(input_train, "r") as fin, open(output_train, "w") as fout:
   for line in fin:
