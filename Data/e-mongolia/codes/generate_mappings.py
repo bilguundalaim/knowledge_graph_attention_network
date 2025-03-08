@@ -1,13 +1,13 @@
 import pandas as pd
 
-kg_file = "../kg_final.txt"
+kg_file = "../kg_final_raw.txt"
 
 # Initialize sets to store entities and relations
 entities = set()
 relations = set()
 
-# Read kg_final.txt and extract entities and relations
-print("Reading knowledge graph from kg_final.txt file...")
+# Read kg_final_raw.txt and extract entities and relations
+print("Reading knowledge graph from kg_final_raw.txt file...")
 with open(kg_file, 'r') as f:
   for line in f:
     parts = line.strip().split()
@@ -24,9 +24,11 @@ relation_mapping = {relation: idx for idx, relation in enumerate(sorted(relation
 # Write entity and relation mappings to files
 print("Writing entity and relation mappings to files...")
 with open("../entity_list.txt", "w") as f:
+  f.write("org_id remap_id\n")
   for entity, idx in entity_mapping.items():
     f.write(f"{entity} {idx}\n")
     
 with open("../relation_list.txt", "w") as f:
+  f.write("org_id remap_id\n")
   for relation, idx in relation_mapping.items():
     f.write(f"{relation} {idx}\n")

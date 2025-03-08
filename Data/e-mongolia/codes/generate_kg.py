@@ -19,6 +19,6 @@ for index, row in df_service.iterrows():
 
 # Writing the triples to a file
 print("Writing the triples to a file...")
-with open('../kg_final.txt', 'w') as f:
+with open('../kg_final_raw.txt', 'w') as f:
   for triple in kg_triples:
     f.write(triple + "\n")

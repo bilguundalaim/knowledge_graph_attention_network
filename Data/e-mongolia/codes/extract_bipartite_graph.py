@@ -1,4 +1,5 @@
 import pandas as pd
+import csv
 
 # Reading all sheets from the excel file
 print("Reading all sheets from the excel file...")
@@ -19,4 +20,4 @@ train_data = df.groupby("userid")["service_id"].apply(lambda x: " ".join(map(str
 
 # Saving the data
 print("Saving the data...")
-train_data.to_csv("../train.txt", sep=" ", index=False, header=False)
+train_data.to_csv("../train_raw.txt", sep=" ", index=False, header=False, quoting=csv.QUOTE_NONE, escapechar=' ')
