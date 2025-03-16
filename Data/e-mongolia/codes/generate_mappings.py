@@ -1,12 +1,12 @@
 import pandas as pd
 
 kg_file = "../kg_final_raw.txt"
-item_list_file = "../item_list.txt"
+user_list_file = "../user_list.txt"
 
-item_map = pd.read_csv(item_list_file, sep=" ", header=0, names=["org_id", "remap_id"], dtype=str)
-item_dict = dict(zip(item_map["org_id"], item_map["remap_id"])) 
+user_map = pd.read_csv(user_list_file, sep=" ", header=0, names=["org_id", "remap_id"], dtype=str)
+user_dict = dict(zip(user_map["org_id"], user_map["remap_id"])) 
 
-print("Max id in item_list: ", max(map(int, item_dict.values())))
+print("Max id in user_list: ", max(map(int, user_dict.values())))
 
 # Initialize sets to store entities and relations
 entities = set()
@@ -26,11 +26,11 @@ with open(kg_file, 'r') as f:
 print("Assigning unique ids to entities and relations...")
 
 entity_mapping = {}
-next_id = max(map(int, item_dict.values())) + 1
+next_id = max(map(int, user_dict.values())) + 1
 
 for entity in sorted(entities):
-    if entity in item_dict:
-        entity_mapping[entity] = item_dict[entity]
+    if entity in user_dict:
+        entity_mapping[entity] = user_dict[entity]
     else:
         entity_mapping[entity] = str(next_id)
         next_id += 1
